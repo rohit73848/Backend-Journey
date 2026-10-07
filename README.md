@@ -73,7 +73,7 @@ Tracking my consistency and hands-on milestones day by day:
 | 📝 **Day 7** | Database CRUD Operations | `create()`, `find()`, `findById()`, async/await error handling | ✅ Done |
 | 🔗 **Day 8** | Full-Stack Integration | Connecting React frontend with Express API via Axios | ✅ Done |
 | 🛠️ **Day 9** | Advanced CRUD & PATCH API | `findByIdAndUpdate`, `{ new: true }`, inline edit & UI revamp | ✅ Done |
-| 🔐 **Day 10**| Auth & Security | Password hashing with bcrypt, JWT authentication | ⏳ In Progress |
+| 🔐 **Day 10** | Authentication, Security & Deployment | Password hashing, Cookies, JWT concepts, environment variables, production `PORT`, Render deployment preparation | ✅ Done |
 | ⏳ **Day 11+**| Production Ready Architecture | MVC folder structure, validation, rate limiting & deployment | 🔜 Upcoming |
 
 *(Continuously updated as I learn and build every single day!)*
