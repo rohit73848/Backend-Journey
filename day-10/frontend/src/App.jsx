@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
+
 import axios from "axios";
 
 function App() {
   // ! Store all notes in React state
   const [notes, setNotes] = useState([]);
+
   const [editingNote, setEditingNote] = useState(null);
+
   // Fetch notes from the backend
   function fetchNotes() {
-    axios.get("http://localhost:3000/api/notes").then((res) => {
+    axios.get("/api/notes").then((res) => {
       setNotes(res.data.notes);
     });
   }
@@ -26,7 +29,7 @@ function App() {
 
     // Send a POST request to create a note
     axios
-      .post("http://localhost:3000/api/notes", {
+      .post("/api/notes", {
         title: title.value,
         description: description.value,
       })
@@ -40,27 +43,31 @@ function App() {
   }
 
   function handleDelete(noteId) {
-    axios.delete(`http://localhost:3000/api/notes/${noteId}`).then((res) => {
+    axios.delete(`/api/notes/${noteId}`).then((res) => {
       console.log(res.data);
       fetchNotes();
     });
   }
 
-function handleEditNote(note) {
+  function handleEditNote(note) {
     setEditingNote(note);
   }
 
   function handleUpdateNote(e) {
     e.preventDefault();
+
     const { title, description } = e.target.elements;
-    axios.patch(`http://localhost:3000/api/notes/${editingNote._id}`, {
-      title:title.value,
-      description:description.value
-    })
-    .then((res)=>{
-      setEditingNote(null);
-      fetchNotes();
-    })
+
+    axios
+      .patch(`/api/notes/${editingNote._id}`, {
+        title: title.value,
+        description: description.value,
+      })
+      .then((res) => {
+        console.log(res.data);
+        setEditingNote(null);
+        fetchNotes();
+      });
   }
 
   return (
@@ -69,18 +76,31 @@ function handleEditNote(note) {
         {/* Form for creating a new note */}
         <form className="note-create-form" onSubmit={handleSubmit}>
           <input type="text" name="title" placeholder="Enter title" />
+
           <input
             type="text"
             name="description"
             placeholder="Enter description"
           />
+
           <button>Create Note</button>
         </form>
+
         {/* Form for editing an existing note */}
         {editingNote && (
           <form onSubmit={handleUpdateNote}>
-            <input type="text" name="title" defaultValue={editingNote.title} />
-            <input type="text" name="description" defaultValue={editingNote.description} />
+            <input
+              type="text"
+              name="title"
+              defaultValue={editingNote.title}
+            />
+
+            <input
+              type="text"
+              name="description"
+              defaultValue={editingNote.description}
+            />
+
             <button type="submit">Update Note</button>
           </form>
         )}
@@ -91,7 +111,9 @@ function handleEditNote(note) {
             return (
               <div className="note" key={index}>
                 <h1>{note.title}</h1>
+
                 <p>{note.description}</p>
+
                 <button
                   onClick={() => {
                     handleDelete(note._id);
