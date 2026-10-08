@@ -74,7 +74,7 @@ Tracking my consistency and hands-on milestones day by day:
 | 🔗 **Day 8** | Full-Stack Integration | Connecting React frontend with Express API via Axios | ✅ Done |
 | 🛠️ **Day 9** | Advanced CRUD & PATCH API | `findByIdAndUpdate`, `{ new: true }`, inline edit & UI revamp | ✅ Done |
 | 🔐 **Day 10** | Authentication, Security & Deployment | Password hashing, Cookies, JWT concepts, environment variables, production `PORT`, Render deployment preparation | ✅ Done |
-| ⏳ **Day 11+**| Production Ready Architecture | MVC folder structure, validation, rate limiting & deployment | 🔜 Upcoming |
+| 🔐 **Day 12** | User Registration & JWT Authentication | User registration API, duplicate email validation, MongoDB user creation, JWT token generation, JWT payload & secure environment secret | ✅ Done |
 
 *(Continuously updated as I learn and build every single day!)*
 
