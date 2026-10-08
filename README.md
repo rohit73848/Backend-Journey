@@ -75,6 +75,7 @@ Tracking my consistency and hands-on milestones day by day:
 | 🛠️ **Day 9** | Advanced CRUD & PATCH API | `findByIdAndUpdate`, `{ new: true }`, inline edit & UI revamp | ✅ Done |
 | 🔐 **Day 10** | Authentication, Security & Deployment | Password hashing, Cookies, JWT concepts, environment variables, production `PORT`, Render deployment preparation | ✅ Done |
 | 🔐 **Day 12** | User Registration & JWT Authentication | User registration API, duplicate email validation, MongoDB user creation, JWT token generation, JWT payload & secure environment secret | ✅ Done |
+| 🔐 **Day 13** | Password Hashing & User Login | MD5 password hashing, login API, password verification, JWT authentication, cookie-based token storage & protected route | ✅ Done |
 
 *(Continuously updated as I learn and build every single day!)*
 
