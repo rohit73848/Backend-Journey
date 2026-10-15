@@ -1,0 +1,15 @@
+==> Authentication
+    => register (1. user er data save kora, 2. token user ke duya)
+    => login
+    => logout (token blacklisting)
+    => [OTP based registration]
+
+==> post
+    => create
+    => can see the feed
+    => like posts (collection types)
+    => save post
+
+==> users
+    => followers
+    => following
