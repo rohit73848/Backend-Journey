@@ -11,4 +11,10 @@ const upload = multer({storage:multer.memoryStorage()})
 
 postRouter.post("/",upload.single("image"), postController.createPostController)
 
-module.exports = postRouter 
+/*
+ * GET /api/posts [protected]
+*/
+
+postRouter.get("/", postController.getPostsController)
+
+module.exports = postRouter ;
