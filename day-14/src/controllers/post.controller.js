@@ -8,26 +8,7 @@ const imagekit = new ImageKit({
 });
 
 async function createPostController(req, res) {
-  console.log(req.body, req.file);
-
-  const token = req.cookies.token;
-
-  if (!token) {
-    return res.status(401).json({
-      message: "Token not provided , Unauthorized Access",
-    });
-  }
-
-  let decoded = null;
-  try {
-    decoded = jwt.verify(token, process.env.JWT_SECRET);
-  } catch (err) {
-    return res.status(401).json({
-      message: "User not authorized",
-    });
-  }
-
-  console.log(decoded);
+ 
 
   const file = await imagekit.files.upload({
     file: await toFile(Buffer.from(req.file.buffer), "file"),
@@ -38,7 +19,7 @@ async function createPostController(req, res) {
   const post = await postModel.create({
     caption: req.body.caption,
     imgUrl: file.url,
-    user: decoded.id,
+    user: req.user.id,
   });
 
   res.status(201).json({
@@ -48,24 +29,9 @@ async function createPostController(req, res) {
 }
 
 async function getPostsController(req, res) {
-  const token = req.cookies.token;
+  
 
-  if (!token) {
-    return res.status(401).json({
-      message: "Token not provided , Unauthorized Access",
-    });
-  }
-
-  let decoded = null;
-  try {
-    decoded = jwt.verify(token, process.env.JWT_SECRET);
-  } catch (err) {
-    return res.status(401).json({
-      message: "User not authorized, Token Invalid",
-    });
-  }
-
-  const userId = decoded.id;
+  const userId = req.user.id;
 
   const posts = await postModel.find({
     user: userId,
@@ -77,24 +43,8 @@ async function getPostsController(req, res) {
 }
 
 async function getPostDetailsController(req, res) {
-  const token = req.cookies.token;
-
-  if (!token) {
-    return res.status(401).json({
-      message: "Token not provided , Unauthorized Access",
-    });
-  }
-
-  let decoded = null;
-
-  try {
-    decoded = jwt.verify(token, process.env.JWT_SECRET);
-  } catch (err) {
-    return res.status(401).json({
-      message: "User not authorized, Token Invalid",
-    });
-  }
-  const userId = decoded.id;
+  
+  const userId = req.user.id;
   const postId = req.params.postId;
 
   const post = await postModel.findById(postId);
