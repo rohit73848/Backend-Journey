@@ -1,7 +1,7 @@
+# 🚀 Backend Journey 💻⚡
+
 <div align="center">
 
-  # 🚀 Backend Journey 💻⚡
-  
   <p align="center">
     <strong><i>Turning caffeine ☕ into robust APIs, scalable architectures & clean code!</i></strong>
   </p>
@@ -28,8 +28,9 @@
     <a href="#-how-to-run-locally">How to Run</a> •
     <a href="#-connect-with-me">Connect</a>
   </p>
-  
+
   <hr style="border: 1px solid #334155; margin: 20px 0;" />
+
 </div>
 
 ## 📌 About This Journey
@@ -38,7 +39,7 @@
 
 Welcome to my **Backend Journey** repository! 🎯
 
-This is my live, day-by-day learning journal as I dive deep into backend engineering. From mastering the Node.js event loop and building RESTful APIs with Express to architecting database schemas in MongoDB and integrating dynamic frontend clients—everything I build in cohort classes and practice sessions is committed here.
+This is my day-by-day learning journal as I dive deep into backend engineering. From mastering the Node.js event loop and building RESTful APIs with Express to architecting database schemas in MongoDB and integrating dynamic frontend clients—everything I build in cohort classes and practice sessions is committed here.
 
 **Current Mission:** Zero to Production-Ready Backend Developer! 🛠️
 
@@ -76,6 +77,11 @@ Tracking my consistency and hands-on milestones day by day:
 | 🔐 **Day 10** | Authentication, Security & Deployment | Password hashing, Cookies, JWT concepts, environment variables, production `PORT`, Render deployment preparation | ✅ Done |
 | 🔐 **Day 12** | User Registration & JWT Authentication | User registration API, duplicate email validation, MongoDB user creation, JWT token generation, JWT payload & secure environment secret | ✅ Done |
 | 🔐 **Day 13** | Password Hashing & User Login | MD5 password hashing, login API, password verification, JWT authentication, cookie-based token storage & protected route | ✅ Done |
+| 🛡️ **Day 14** | Authentication Middleware | JWT verification, identifying authenticated users, protecting routes | ✅ Done |
+| 🗂️ **Day 15** | Post Model & API Setup | Post schema, model setup, post routes and controller structure | ✅ Done |
+| 🖼️ **Day 16** | Create Post API | Image upload with ImageKit, post creation, caption and authenticated user association | ✅ Done |
+| 📥 **Day 17** | Fetch Posts & Post Details | Fetching user posts, fetching post details by ID, post ownership validation | ✅ Done |
+| ⚡ **Day 18** | MongoDB Indexing & Edge Collections | Indexing concepts, `COLLSCAN` vs `IXSCAN`, follower/following relationships, edge collection design | ✅ Done |
 
 *(Continuously updated as I learn and build every single day!)*
 
@@ -96,3 +102,5 @@ Backend-journey/
 │   ├── 📁 backend/       # Express server, MongoDB models & PATCH API
 │   └── 📁 frontend/      # Modern React UI with inline editing & search
 └── 📄 README.md          # You are here! ✨
+```
+
