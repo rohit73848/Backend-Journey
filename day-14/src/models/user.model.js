@@ -15,13 +15,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Password is required"],
   },
-  bio:String,
-  profileImage:{
-    type:String,
-    default:"https://ik.imagekit.io/tb1gktzlc/default-profile-image.webp"
-  }
+  bio: String,
+  profileImage: {
+    type: String,
+    default: "https://ik.imagekit.io/tb1gktzlc/default-profile-image.webp",
+  },
+ 
 });
 
-const userModel = mongoose.model("users",userSchema)
+const userModel = mongoose.model("users", userSchema);
 
 module.exports = userModel;
